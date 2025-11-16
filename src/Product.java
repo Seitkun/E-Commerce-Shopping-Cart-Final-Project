@@ -1,5 +1,4 @@
-public class Product {
-    String name;
-    double price;
-    int stock;
-}
+public interface Product{
+        void show();
+        String getname();
+    }
