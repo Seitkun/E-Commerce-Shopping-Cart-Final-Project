@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StoreSubject {
-    private final List<StoreObserver> observers = new ArrayList<>();
+    private final List<StoreObserver> observers=new ArrayList<>();
 
     public void addObserver(StoreObserver observer){
         observers.add(observer);
@@ -14,6 +14,7 @@ public class StoreSubject {
     public void notifyObservers(Product product){
         for(StoreObserver observer : observers){
             observer.update(product);
-        }
+ }
+   
     }
 }
