@@ -9,16 +9,16 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        Store store = new Store();
-        Cart cart = new Cart();
+        Store store=new Store();
+        Cart cart=new Cart();
         store.addObserver(cart);
 
-        StoreFacade storeFacade = new StoreFacade(store, cart);
+        StoreFacade storeFacade=new StoreFacade(store, cart);
 
         while(true) {
             System.out.println("\nWelcome to E-Commerce Store!");
             System.out.println("Choose option\n 1. Manage product (Admin)\n2. Buy product (User)\n3. Exit");
-            int choice = scanner.nextInt();
+            int choice=scanner.nextInt();
             scanner.nextLine();
 
             switch(choice) {
@@ -31,16 +31,16 @@ public class Main {
                             "4. List products\n" +
                             "5. Clone product\n" +
                             "6. Exit\n");
-                    int option = scanner.nextInt();
+                    int option=scanner.nextInt();
                     switch (option) {
                         case 1 -> {
                             System.out.println("Enter product name: ");
                             scanner.nextLine();
-                            String productName = scanner.nextLine();
+                            String productName= scanner.nextLine();
                             System.out.println("Enter product price: ");
-                            double productPrice = scanner.nextDouble();
+                            double productPrice=  scanner.nextDouble();
                             System.out.println("Enter product stock: ");
-                            int productStock = scanner.nextInt();
+                            int productStock=scanner.nextInt();
                             storeFacade.adminAddProduct(productName, productPrice, productStock);
                             System.out.println("Product added successfully!");
                             System.out.println("================================");
@@ -50,7 +50,7 @@ public class Main {
                             System.out.println("Enter product ID to change price: ");
                             int id = scanner.nextInt() - 1;
                             System.out.println("Enter new price: ");
-                            double newPrice = scanner.nextDouble();
+                            double newPrice=scanner.nextDouble();
                             store.changePrice(id, newPrice);
                             System.out.println("Price updated successfully!");
                             System.out.println("================================");
@@ -58,13 +58,12 @@ public class Main {
                         case 3-> {
                             store.list();
                             System.out.println("Enter product ID to change stock: ");
-                            int id = scanner.nextInt() - 1;
+                            int id=scanner.nextInt() - 1;
                             System.out.println("Enter new stock: ");
-                            int stock = scanner.nextInt();
+                            int stock=scanner.nextInt();
                             store.changeStock(id, stock);
                             System.out.println("Stock updated successfully!");
-                            System.out.println("================================");
-                        }
+                            System.out.println("================================");}
                         case 4-> {
                             store.list();
                             System.out.println("================================");
@@ -72,18 +71,17 @@ public class Main {
                         case 5->{
                             store.list();
                             System.out.println("Enter product ID to clone: ");
-                            int id = scanner.nextInt() - 1;
+                            int id=scanner.nextInt() - 1;
                             storeFacade.cloneProduct(id);
                             System.out.println("Product cloned successfully!");
-                            System.out.println("================================");
-                        }
+                            System.out.println("================================");}
                         case 6-> {
                             System.out.println("Exiting...\n" +
                                     "================================");
                             return;
                         }
                         default->
-                                System.out.println("Invalid option!\n================================");
+                                System.out.println("Invalid option\n================================");
                     }
                 }
                 case 2-> {
@@ -101,7 +99,7 @@ public class Main {
                         case 1-> {
                             store.list();
                             System.out.println("Enter product ID to add to cart: ");
-                            int id = scanner.nextInt() - 1;
+                            int id=scanner.nextInt() - 1;
                             storeFacade.userAddToCart(id);
                             System.out.println("Product added to cart!");
                             System.out.println("================================");
@@ -109,7 +107,7 @@ public class Main {
                         case 2->{
                             cart.show();
                             System.out.println("Enter product ID to remove from cart: ");
-                            int id = scanner.nextInt() - 1;
+                            int id=scanner.nextInt() - 1;
                             cart.remove(id);
                             System.out.println("Product removed from cart!");
                             System.out.println("================================");
@@ -131,9 +129,9 @@ public class Main {
                         case 5-> {
                             cart.show();
                             System.out.println("Enter product ID to decorate: ");
-                            int id = scanner.nextInt() - 1;
+                            int id=scanner.nextInt() - 1;
                             System.out.println("Choose decorator: 1. GiftDecorator");
-                            int decor = scanner.nextInt();
+                            int decor=scanner.nextInt();
                             if (decor == 1) {
                                 cart.decorateProduct(id, GiftDecorator.class);
                                 System.out.println("Product decorated successfully!");
@@ -159,7 +157,10 @@ public class Main {
                 }
                 default-> System.out.println("Invalid option!\n================================");
 
-            }
-        }
+     }
+      
+    }
+    
     }
 }
+
