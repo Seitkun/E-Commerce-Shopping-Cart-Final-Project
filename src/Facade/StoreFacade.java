@@ -3,6 +3,7 @@ package Facade;
 import Classes.*;
 import Builder.*;
 import Strategy.*;
+
 import Prototype.*;
 
 public class StoreFacade {
@@ -10,8 +11,8 @@ public class StoreFacade {
     private final Cart cart;
 
     public StoreFacade(Store store, Cart cart) {
-        this.store = store;
-        this.cart = cart;
+        this.store=store;
+        this.cart=cart;
     }
 
     public void adminAddProduct(String name, double price, int stock) {
@@ -31,8 +32,13 @@ public class StoreFacade {
                 store.get(id).getName(),
                 store.get(id).getPrice(),
                 store.get(id).getStock(),
+            
                 store.get(id).getType()
         );
         store.addProduct(original.clone());
-    }
+   
+ }
+
 }
+
+
