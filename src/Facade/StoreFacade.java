@@ -16,7 +16,7 @@ public class StoreFacade {
     }
 
     public void adminAddProduct(String name, double price, int stock) {
-        Product product = new ProductBuilder().setName(name).setPrice(price).setStock(stock).build();
+        Product product=new ProductBuilder().setName(name).setPrice(price).setStock(stock).build();
         store.addProduct(product);
     }
 
@@ -28,7 +28,7 @@ public class StoreFacade {
         cart.applyDiscount(discounter.getStrategy());
     }
     public void cloneProduct(int id){
-        ProductPrototype original = new ProductPrototype(
+        ProductPrototype original=new ProductPrototype(
                 store.get(id).getName(),
                 store.get(id).getPrice(),
                 store.get(id).getStock(),
@@ -40,5 +40,6 @@ public class StoreFacade {
  }
 
 }
+
 
 
